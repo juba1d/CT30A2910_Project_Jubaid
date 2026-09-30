@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Documentation - Jubaid Rusho</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      color: #000000;
+      line-height: 1.4;
+      font-size: 12pt;
+      background: #ffffff;
+    }
+    .header {
+      border-bottom: 1px solid #000000;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+    .title {
+      font-size: 16pt;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .meta-line {
+      font-size: 11pt;
+      margin-bottom: 2px;
+    }
+    h2 {
+      font-size: 13pt;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      border-bottom: 0.5px solid #000000;
+      padding-bottom: 2px;
+    }
+    p {
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+    ul {
+      margin-left: 24px;
+      margin-bottom: 8px;
+    }
+    li {
+      margin-bottom: 3px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 12px 0;
+      font-size: 10.5pt;
+    }
+    th, td {
+      border: 1px solid #000000;
+      padding: 5px 6px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    .points-cell {
+      text-align: center;
+      width: 45px;
+    }
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">Course Project Report: Money and Crypto Portal</div>
+    <div class="meta-line"><strong>Student Name:</strong> Jubaid Rusho</div>
+    <div class="meta-line"><strong>Student ID:</strong> 003257973</div>
+    <div class="meta-line"><strong>GitHub:</strong> https://github.com/juba1d</div>
+  </div>
+
+  <h2>1. What Was Done</h2>
+  <p>
+    I built a money and cryptocurrency portal using basic HTML, CSS and JavaScript without any JS frameworks. The application gets live data from three public APIs (Coinpaprika, Frankfurter and Binance).
+  </p>
+  <p>
+    The main parts of the project are:
+  </p>
+  <ul>
+    <li><strong>Multi-Charts:</strong> Users can drag and drop currency items directly onto charts to compare price lines. Users can also change timeframes (24H, 7D, 30D, 90D, 1Y, 5Y), change line colors, open multiple charts side by side and download charts as PNG or SVG images.</li>
+    <li><strong>Portfolio Tracker:</strong> Users can enter their crypto buyings (date, buy price and amount). The app calculates the current value, cost basis and profit/loss in USD, EUR and GBP. It also shows a simple buy, hold or sell recommendation.</li>
+    <li><strong>Purchasing Power Table:</strong> Shows live prices of major cryptos converted into EUR, GBP, JPY, CAD and CHF.</li>
+    <li><strong>Currency Converter:</strong> Lets users convert amounts between crypto and fiat currencies.</li>
+  </ul>
+
+  <h2>2. Tools Used</h2>
+  <ul>
+    <li><strong>HTML5, CSS3 and JavaScript (ES6+):</strong> Built with separate files for HTML, CSS and JS.</li>
+    <li><strong>Chart.js:</strong> Used for drawing simple, responsive line charts.</li>
+    <li><strong>Coinpaprika API:</strong> Provides live crypto prices, market caps and price changes.</li>
+    <li><strong>Frankfurter API:</strong> Provides live and historical fiat exchange rates.</li>
+    <li><strong>Binance API:</strong> Provides historical price data for charts.</li>
+  </ul>
+
+  <h2>3. User Manual</h2>
+  <ul>
+    <li><strong>Viewing and Comparing Charts:</strong> On the Charts tab, drag any item from the left list and drop it on the chart. To add another chart next to it, click "+ Add Chart". Use the timeframe buttons (24H, 7D, 30D etc.) to switch the period. Click the color circle to pick a new color.</li>
+    <li><strong>Exporting Charts:</strong> Click the "PNG" or "SVG" button on the chart to download the image. Click "Share" to share the chart.</li>
+    <li><strong>Using the Portfolio:</strong> Go to the Portfolio tab, choose a coin, select purchase date, enter buy price and amount, then click "Record Buy". The table displays total value, profit/loss and a recommendation.</li>
+    <li><strong>Checking Details:</strong> Click on any coin in the left list to see 24h high/low, trading volume, market cap and all-time high.</li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <h2>4. Points Claimed and Justification</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th class="points-cell">Max</th>
+        <th class="points-cell">Claimed</th>
+        <th>Justification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Well written PDF report</td>
+        <td class="points-cell">3</td>
+        <td class="points-cell">3</td>
+        <td>Clear PDF report with manual, tools, points table and AI declaration.</td>
+      </tr>
+      <tr>
+        <td>Responsive desktop and mobile</td>
+        <td class="points-cell">4</td>
+        <td class="points-cell">4</td>
+        <td>Layout works on mobile phones, tablets and desktop screens.</td>
+      </tr>
+      <tr>
+        <td>Cross-browser compatibility</td>
+        <td class="points-cell">3</td>
+        <td class="points-cell">3</td>
+        <td>Works properly on Chrome, Firefox, Safari and Edge.</td>
+      </tr>
+      <tr>
+        <td>Clear directory structure</td>
+        <td class="points-cell">2</td>
+        <td class="points-cell">2</td>
+        <td>Separate folders for css, js and docs with separated files.</td>
+      </tr>
+      <tr>
+        <td>Drag and drop data to charts</td>
+        <td class="points-cell">4</td>
+        <td class="points-cell">4</td>
+        <td>Items can be dragged from the sidebar and dropped onto charts.</td>
+      </tr>
+      <tr>
+        <td>Time period selection</td>
+        <td class="points-cell">2</td>
+        <td class="points-cell">2</td>
+        <td>Users can choose 24H, 7D, 30D, 90D, 1Y and 5Y periods.</td>
+      </tr>
+      <tr>
+        <td>Color selection for currencies</td>
+        <td class="points-cell">2</td>
+        <td class="points-cell">2</td>
+        <td>Color picker allows changing line colors for any dataset.</td>
+      </tr>
+      <tr>
+        <td>Add new charts next to each other</td>
+        <td class="points-cell">2</td>
+        <td class="points-cell">2</td>
+        <td>Users can add multiple chart boxes side by side.</td>
+      </tr>
+      <tr>
+        <td>Click data for additional info</td>
+        <td class="points-cell">2</td>
+        <td class="points-cell">2</td>
+        <td>Clicking chart points or list items opens detailed coin information.</td>
+      </tr>
+      <tr>
+        <td>At least two data providers (2 APIs)</td>
+        <td class="points-cell">3</td>
+        <td class="points-cell">3</td>
+        <td>Uses Coinpaprika API and Frankfurter API.</td>
+      </tr>
+      <tr>
+        <td>At least three data providers (3 APIs)</td>
+        <td class="points-cell">2</td>
+        <td class="points-cell">2</td>
+        <td>Uses Binance API as a third separate service.</td>
+      </tr>
+      <tr>
+        <td>Data combined and merged</td>
+        <td class="points-cell">3</td>
+        <td class="points-cell">3</td>
+        <td>Combines crypto and fiat rates into purchasing power and ratios.</td>
+      </tr>
+      <tr>
+        <td>Portfolio tracker and buy/sell advice</td>
+        <td class="points-cell">5</td>
+        <td class="points-cell">5</td>
+        <td>Tracks crypto purchases, calculates profit and gives buy/sell advice.</td>
+      </tr>
+      <tr>
+        <td>Download chart as PNG or SVG</td>
+        <td class="points-cell">2</td>
+        <td class="points-cell">2</td>
+        <td>Buttons to download the chart as PNG or SVG.</td>
+      </tr>
+      <tr>
+        <td>Share visualization to social media</td>
+        <td class="points-cell">2</td>
+        <td class="points-cell">2</td>
+        <td>Share modal with quick sharing links and Web Share support.</td>
+      </tr>
+      <tr>
+        <td>Own features (Bonus)</td>
+        <td class="points-cell">n</td>
+        <td class="points-cell">4</td>
+        <td>Live price ticker bar, instant converter and localStorage saving.</td>
+      </tr>
+      <tr style="background-color: #f2f2f2; font-weight: bold;">
+        <td>Total Points Claimed</td>
+        <td class="points-cell">40</td>
+        <td class="points-cell">40</td>
+        <td>All requested features are implemented and working.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>5. Declaration of AI Usage</h2>
+  <p>
+    <strong>1) AI System Used:</strong> Gemini 3.7 Flash.
+  </p>
+  <p>
+    <strong>2) How and Where AI Was Used:</strong>
+  </p>
+  <ul>
+    <li>Getting ideas for which public APIs to use without API keys.</li>
+    <li>Planning how to calculate merged data (like crypto purchasing power in EUR and GBP).</li>
+    <li>Proofreading the text and organizing the points justification table for this document.</li>
+  </ul>
+  <p>
+    All code structure, styling and testing were completed to satisfy the course project requirements.
+  </p>
+
+</body>
+</html>

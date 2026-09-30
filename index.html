@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto & Money Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-ticker">
+    <div class="ticker-track" id="ticker-track"></div>
+  </div>
+
+  <header class="app-header">
+    <div>
+      <div class="brand-title">Crypto & Money Portal</div>
+      <div class="brand-subtitle">Currency comparison and portfolio tracker</div>
+    </div>
+
+    <nav class="header-nav">
+      <button class="nav-link active" data-target="charts">Charts</button>
+      <button class="nav-link" data-target="portfolio">Portfolio</button>
+      <button class="nav-link" data-target="analytics">Purchasing Power</button>
+      <button class="nav-link" data-target="converter">Converter</button>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn-primary" id="btn-add-chart">+ Add Chart</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="app-section active" id="section-charts">
+      <div class="dashboard-layout">
+        <aside class="sidebar-panel">
+          <div class="search-input-wrapper">
+            <input type="text" class="search-input" id="asset-search" placeholder="Search currencies...">
+          </div>
+
+          <div>
+            <div class="sidebar-section-title">Cryptocurrencies</div>
+            <div class="asset-chips-list" id="crypto-assets-list"></div>
+          </div>
+
+          <div>
+            <div class="sidebar-section-title">Fiat Currencies</div>
+            <div class="asset-chips-list" id="fiat-assets-list"></div>
+          </div>
+
+          <div>
+            <div class="sidebar-section-title">Derived Metrics</div>
+            <div class="asset-chips-list" id="derived-assets-list"></div>
+          </div>
+        </aside>
+
+        <div class="charts-grid" id="charts-container"></div>
+      </div>
+    </section>
+
+    <section class="app-section" id="section-portfolio">
+      <div class="portfolio-dashboard">
+        <div class="portfolio-summary-grid">
+          <div class="summary-card">
+            <span class="summary-label">Total Invested</span>
+            <span class="summary-val" id="summary-invested">$0.00</span>
+            <span class="summary-sub">Initial Capital</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Current Value</span>
+            <span class="summary-val" id="summary-value">$0.00</span>
+            <span class="summary-sub" id="summary-fiat">≈ €0.00 EUR | £0.00 GBP</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Total Profit / Loss</span>
+            <span class="summary-val" id="summary-pnl">$0.00</span>
+            <span class="summary-sub" id="summary-pnl-percent">(0.00%)</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Advisor Status</span>
+            <span class="summary-val">Active</span>
+            <span class="summary-sub">Automatic Recommendations</span>
+          </div>
+        </div>
+
+        <div class="portfolio-form-card">
+          <div class="section-heading">Add Crypto Purchase</div>
+          <form class="portfolio-form" id="portfolio-form">
+            <div class="form-group">
+              <label for="tx-symbol">Asset</label>
+              <select class="form-control" id="tx-symbol" required></select>
+            </div>
+            <div class="form-group">
+              <label for="tx-date">Purchase Date</label>
+              <input type="date" class="form-control" id="tx-date" required>
+            </div>
+            <div class="form-group">
+              <label for="tx-price">Buy Price (USD)</label>
+              <input type="number" step="any" min="0.000001" class="form-control" id="tx-price" placeholder="Buy price" required>
+            </div>
+            <div class="form-group">
+              <label for="tx-amount">Amount</label>
+              <input type="number" step="any" min="0.000001" class="form-control" id="tx-amount" placeholder="Amount" required>
+            </div>
+            <button type="submit" class="btn-primary">Record Buy</button>
+          </form>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Asset</th>
+                <th>Amount</th>
+                <th>Buy Price</th>
+                <th>Current Price</th>
+                <th>Cost Basis</th>
+                <th>Current Value</th>
+                <th>Profit / Loss</th>
+                <th>Recommendation</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="portfolio-list"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-section" id="section-analytics">
+      <div class="portfolio-dashboard">
+        <div class="section-heading">Crypto Purchasing Power in Different Currencies</div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cryptocurrency</th>
+                <th>USD ($)</th>
+                <th>EUR (€)</th>
+                <th>GBP (£)</th>
+                <th>JPY (¥)</th>
+                <th>CAD (C$)</th>
+                <th>CHF (CHF)</th>
+              </tr>
+            </thead>
+            <tbody id="purchasing-power-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-section" id="section-converter">
+      <div class="converter-container">
+        <div class="section-heading">Currency Converter</div>
+        <div class="converter-box">
+          <div class="converter-row">
+            <input type="number" step="any" class="form-control" id="conv-from-amount" value="1" placeholder="Amount">
+            <select class="form-control" id="conv-from-symbol">
+              <option value="BTC">BTC</option>
+              <option value="ETH">ETH</option>
+              <option value="SOL">SOL</option>
+              <option value="DOGE">DOGE</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="JPY">JPY</option>
+            </select>
+          </div>
+
+          <div class="converter-swap-row">
+            <button class="btn-swap" id="conv-swap">Swap</button>
+          </div>
+
+          <div class="converter-row">
+            <input type="text" class="form-control" id="conv-to-amount" readonly placeholder="Result">
+            <select class="form-control" id="conv-to-symbol">
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+              <option value="JPY">JPY</option>
+              <option value="BTC">BTC</option>
+              <option value="ETH">ETH</option>
+              <option value="SOL">SOL</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="inspector-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">Market Details</div>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div id="inspector-content"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="share-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title" id="share-title">Share Visualization</div>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="share-preview-card">
+        <img id="share-preview-img" class="share-preview-img" alt="Chart Snapshot">
+      </div>
+      <div class="share-buttons-grid">
+        <button class="btn-social" id="btn-share-twitter">Twitter / X</button>
+        <button class="btn-social" id="btn-share-telegram">Telegram</button>
+        <button class="btn-social" id="btn-share-reddit">Reddit</button>
+        <button class="btn-social" id="btn-share-linkedin">LinkedIn</button>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 8px;">
+        <button class="btn-primary" id="btn-share-native" style="flex: 1;">Share</button>
+        <button class="btn-icon" id="btn-copy-link">Copy Link</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/chart.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+Project Development and AI Usage Log
+Project: Crypto & Money Portal (Course Project 3)
+Student Name: Jubaid Rusho
+Student ID: 003257973
+GitHub: https://github.com/juba1d
+Date: Autumn 2026
+
+================================================================================
+1. AI SYSTEM USED
+================================================================================
+The AI system used during the planning and development was Gemini 3.7 Flash.
+
+================================================================================
+2. HOW AI WAS USED TO FORMULATE IDEAS
+================================================================================
+I used Gemini 3.7 Flash for guidance and brainstorming:
+
+a) Choosing the Project:
+I asked Gemini to review the project options, and I selected Project 3 (Money and Crypto Portal).
+
+b) Finding Free APIs:
+I asked Gemini to suggest public APIs that work directly in the browser without paid API keys:
+- Coinpaprika API for live crypto market data.
+- Frankfurter API for European Central Bank fiat exchange rates.
+- Binance API for historical chart data.
+
+c) Brainstorming Merged Data:
+I asked Gemini for ideas on how to merge data from two different services:
+- Calculating crypto prices in EUR and GBP by combining Coinpaprika and Frankfurter data.
+- Calculating the ETH/BTC price ratio.
+- Normalizing charts to base 100 to compare growth percentages.
+
+d) Planning the Portfolio Recommendation Logic:
+Gemini helped outline a basic rule-based logic for recommendations based on profit percentage and 7-day trend.
+
+e) Proofreading:
+Gemini helped check the text and format the points table in the documentation.
+
+================================================================================
+3. STEPS DONE WITHOUT DIRECT AI GENERATION (STEP BY STEP)
+================================================================================
+1. Set up the project folders (css, js, docs and index.html).
+2. Wrote the HTML5 structure with simple rectangular cards, navigation tabs and search inputs.
+3. Wrote the CSS stylesheet with a white theme, rectangular borders, responsive grid and media queries.
+4. Wrote the JavaScript API fetching code in js/api.js using standard fetch and async/await.
+5. Integrated Chart.js in js/chart.js to render line charts, handle drag and drop events and handle PNG/SVG downloads.
+6. Built the portfolio tracker in js/portfolio.js with localStorage saving and recommendation calculations.
+7. Built the currency converter and live ticker bar in js/app.js.
+8. Tested the application on Chrome, Firefox, Safari and Edge.
+9. Created the documentation PDF using Times New Roman font and clean layout.
